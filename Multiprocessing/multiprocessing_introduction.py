@@ -3,11 +3,11 @@ import multiprocessing
 
 def calc_square(numbers):
     for n in numbers:
-        print('square ' + str(n*n))
+        print(f'square {str(n*n)}')
 
 def calc_cube(numbers):
     for n in numbers:
-        print('cube ' + str(n*n*n))
+        print(f'cube {str(n*n*n)}')
 
 if __name__ == "__main__":
     arr = [2,3,8]

@@ -1,7 +1,6 @@
 def add_num(a,b):
     '''Return sum of two numbers'''
-    s=a+b
-    return s
+    return a+b
 
 n1=input('enter first number:')
 n1=int(n1)

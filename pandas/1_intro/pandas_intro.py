@@ -42,11 +42,7 @@ def parse_csv():
 
 
 def get_days_for_event(event_name):
-    days = []
-    for row in __parsed_rows:
-        if row['Events'] == event_name:
-            days.append(row['date'])
-    return days
+    return [row['date'] for row in __parsed_rows if row['Events'] == event_name]
 
 def get_max_temperature():
     max_temp = 0

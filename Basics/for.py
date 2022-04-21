@@ -9,18 +9,13 @@ def ex_expense_break():
     should tell you in which month that expense occurred.
     """
 
-    month_list = ["January", "February", "March", "April", "May"]
     expense_list = [2340, 2500, 2100, 3100, 2980]
     e = input("Enter expense amount: ")
     e = int(e)
 
-    month = -1
-    for i in range(len(expense_list)):
-        if e == expense_list[i]:
-            month = i
-            break
-
+    month = next((i for i in range(len(expense_list)) if e == expense_list[i]), -1)
     if month != -1:
+        month_list = ["January", "February", "March", "April", "May"]
         print('You spent',e,'in',month_list[month])
     else:
         print('You didn\'t spend',e,'in any month')
@@ -36,9 +31,7 @@ def ex_print_shape():
     *****
     """
     for i in range(1,6):
-        s = ''
-        for j in range(i):
-            s += '*'
+        s = ''.join('*' for _ in range(i))
         print(s)
 
 
@@ -49,10 +42,7 @@ def ex_heads_tails():
     Using for loop figure out “heads” count.
     """
     result = ["heads","tails","tails","heads","tails","heads","heads","tails","tails","tails"]
-    count = 0
-    for item in result:
-        if item == "heads":
-            count += 1
+    count = result.count("heads")
     print("Heads count: ",count)
 
 

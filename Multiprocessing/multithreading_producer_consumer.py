@@ -5,7 +5,7 @@ import threading
 queue = []
 
 def produce():
-    for i in range(0,5):
+    for _ in range(5):
         time.sleep(1)
         queue.append(randint(0,9))
 

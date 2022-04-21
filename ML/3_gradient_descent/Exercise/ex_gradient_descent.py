@@ -28,7 +28,7 @@ def gradient_descent(x,y):
 
     for i in range(iterations):
         y_predicted = m_curr * x + b_curr
-        cost = (1/n)*sum([value**2 for value in (y-y_predicted)])
+        cost = 1/n * sum(value**2 for value in (y-y_predicted))
         md = -(2/n)*sum(x*(y-y_predicted))
         bd = -(2/n)*sum(y-y_predicted)
         m_curr = m_curr - learning_rate * md
@@ -36,7 +36,7 @@ def gradient_descent(x,y):
         if math.isclose(cost, cost_previous, rel_tol=1e-20):
             break
         cost_previous = cost
-        print ("m {}, b {}, cost {}, iteration {}".format(m_curr,b_curr,cost, i))
+        print(f"m {m_curr}, b {b_curr}, cost {cost}, iteration {i}")
 
     return m_curr, b_curr
 
@@ -46,8 +46,8 @@ if __name__ == "__main__":
     y = np.array(df.cs)
 
     m, b = gradient_descent(x,y)
-    print("Using gradient descent function: Coef {} Intercept {}".format(m, b))
+    print(f"Using gradient descent function: Coef {m} Intercept {b}")
 
     m_sklearn, b_sklearn = predict_using_sklean()
-    print("Using sklearn: Coef {} Intercept {}".format(m_sklearn,b_sklearn))
+    print(f"Using sklearn: Coef {m_sklearn} Intercept {b_sklearn}")
 

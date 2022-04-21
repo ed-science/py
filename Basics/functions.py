@@ -18,8 +18,8 @@ def print_pattern(n=5):
     # where as inner loop print the content of that specific lines
     for i in range(n):
         s = ''
-        for j in range(i+1):
-            s = s + '*'
+        for _ in range(i+1):
+            s = f'{s}*'
         print(s)
 
 def calculate_area(dimension1,dimension2,shape="triangle"):
@@ -30,13 +30,12 @@ def calculate_area(dimension1,dimension2,shape="triangle"):
     :return: Area of a shape
     '''
     if shape=="triangle":
-        area=1/2*(dimension1*dimension2) # Triangle area is : 1/2(Base*Height)
+        return 1/2*(dimension1*dimension2)
     elif shape=="rectangle":
-        area=dimension1*dimension2 # Rectangle area is: Length*Width
+        return dimension1*dimension2
     else:
         print("***Error: Input shape is neither triangle nor rectangle.")
-        area=None # If user didn't supply "triangle" or "rectangle" as shape then return None
-    return area
+        return None
 
 # ------------------ Shape area exercise ------------------------- #
 # Calculate area of triangle whose base is 10 and height is 5
